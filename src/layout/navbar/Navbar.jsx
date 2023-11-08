@@ -12,12 +12,12 @@ const Navbar = () => {
                         <img width={200} height={50} src={logo} alt="" />
                         <h1 className='nav__seo-title'>Medium</h1>
                     </div>
-                    <ul className="nav__link">
-                        <li className="nav__item"><NavLink to='/'>Home</NavLink></li>
-                        <li className="nav__item"><NavLink to='/membership'>Membership</NavLink></li>
-                        <li className="nav__item"><NavLink to='articles'>Articles</NavLink></li>
-                        <li className="nav__item"><NavLink to='auth/login'>Login</NavLink></li>
-                        <li className="nav__item"><NavLink to='auth/signup'>Get Started</NavLink></li>
+                    <ul className="nav__list">
+                        <li className="nav__item"><NavLink end className={({isActive}) => isActive ? 'nav__link nav__link--active' : 'nav__link'} to='/'>Home</NavLink></li>
+                        <li className="nav__item"><NavLink end className={({isActive}) => isActive ? 'nav__link nav__link--active' : 'nav__link'} to='/membership'>Membership</NavLink></li>
+                        <li className="nav__item"><NavLink end className={({isActive}) => isActive ? 'nav__link nav__link--active' : 'nav__link'} to='articles'>Articles</NavLink></li>
+                        <li className="nav__item"><NavLink end className={({isActive}) => isActive ? 'nav__link nav__link--active' : 'nav__link'} to='auth/login'>Login</NavLink></li>
+                        <li className="nav__item"><NavLink end className={({isActive}) => isActive ? 'nav__link nav__link--active' : 'nav__link btn'} to='auth/signup'>Get Started</NavLink></li>
                     </ul>
                 </div>
             </Container>

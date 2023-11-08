@@ -1,9 +1,11 @@
 // BUTTON
 .btn{
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
     border-radius: 30px;
     border: none;
+     font-size: 20px;
+     padding: 12px 24px;
 }
 
 .btn[type="small"]{
