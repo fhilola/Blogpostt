@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from '../../utils'
+import Hero from '../../components/hero/Hero'
 
 const Home = () => {
   return (
     <div>
-        <Button text={'Get started'} type={'small'} loading={'false'} />
+        <Hero/>
     </div>
   )
 }
