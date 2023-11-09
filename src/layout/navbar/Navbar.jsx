@@ -1,10 +1,11 @@
 import './Navbar.scss'
 import { Container } from '../../utils'
 import logo from '../../assets/image/logo.svg'
-import { NavLink } from 'react-router-dom'
-
-const Navbar = () => {
-    return (
+import { NavLink, useLocation } from 'react-router-dom'
+const EXCEPTION_ROUTES = ['/auth/login', '/auth/signup', '/admin']
+const Navbar = ({type}) => {
+    const {pathname} = useLocation()
+    return !EXCEPTION_ROUTES.includes(pathname) && (
         <nav className='nav'>
             <Container>
                 <div className="nav__wrapper">

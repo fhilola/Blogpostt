@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="hero__content">
         <h2>Stay curios.</h2>
         <p>Discover stories, thinking, and expertise from writers on any topic</p>
-        <Button text={'Get started'}/>
+        <Button type={'large'} text={'Get started'}/>
       </div>
         <div className='hero__image'>
           <img src={hero} alt="" />
