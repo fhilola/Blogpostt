@@ -15,9 +15,7 @@ const Auth = () => {
             </li>
           </ul>
         </nav>
-        <form>
         <Outlet/>
-      </form>
       </div>
       
     </div>

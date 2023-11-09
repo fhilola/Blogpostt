@@ -31,3 +31,15 @@
         }
     }
 }
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 15px 0;
+    input{
+        height: 35px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        text-indent: 10px;
+    }
+}
