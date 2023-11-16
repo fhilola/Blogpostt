@@ -1,3 +1,12 @@
 @import './scss/reset.scss';
 @import './scss/fonts.scss';
-@import './scss/variables.scss'
+@import './scss/variables.scss';
+
+
+:root {
+    --toastify-color-light: #fff;
+    --toastify-color-dark: #121212;
+    --toastify-color-info: #3498db;
+    --toastify-color-success: green !important;
+    --toastify-color-error: #e74c3c;
+}

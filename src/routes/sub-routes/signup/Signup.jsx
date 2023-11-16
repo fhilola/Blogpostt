@@ -1,6 +1,8 @@
 import { useValue } from '../../../context/AppProvider'
 import instance from '../../../services/api'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const [firstname, setFirstname] = useState('')
@@ -8,6 +10,7 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [state, dispatch] = useValue()
+  const navigate = useNavigate()
 
   const handleUSerSingup = (e)=>{
     e.preventDefault()
@@ -24,9 +27,16 @@ const Signup = () => {
           token: response.data.token
         }
         dispatch({type:'AUTH', userdata})
+        toast.success('Successfully registered')
+        navigate('/')
+      }
+      else{
+        throw new Error('Something went wrong')
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      toast.error(err.response.data?.errors[0].msg)
+    })
   }
   return (
     <form className='auth-form' onSubmit={handleUSerSingup}>
