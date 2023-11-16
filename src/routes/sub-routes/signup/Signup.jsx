@@ -21,6 +21,7 @@ const Signup = () => {
       password
     })
     .then(response => {
+      console.log(response);
       if(response.data.token){
         const userdata = {
           user: response.data.data,
@@ -29,6 +30,7 @@ const Signup = () => {
         dispatch({type:'AUTH', userdata})
         toast.success('Successfully registered')
         navigate('/')
+        console.log(state);
       }
       else{
         throw new Error('Something went wrong')
