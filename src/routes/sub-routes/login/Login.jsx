@@ -8,16 +8,7 @@ const Login = () => {
   const [state, dispatch] = useValue()
   const handleUSerLogin = (e) => {
     e.preventDefault()
-    instance.post('/api/auth/login', {
-      email,
-      password
-    })
-    .then(data => {
-      if(data.status === 200){
-        dispatch({type:"LOGIN", data})
-      }
-    })
-    .catch(err => console.log(err))
+    console.log(state);
   }
 
   return (

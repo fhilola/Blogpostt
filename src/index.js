@@ -9,11 +9,11 @@ const App = lazy(()=> import('./App'))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       <BrowserRouter>
-    <AppProvider>
     <Suspense fallback={<p>Loading...</p>}>
+    <AppProvider>
       <App />
-    </Suspense>
     </AppProvider>
+    </Suspense>
     </BrowserRouter>
 );
 

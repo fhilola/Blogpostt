@@ -1,7 +1,10 @@
+import { useValue } from '../../context/AppProvider'
 import './Auth.scss'
 import {NavLink, Outlet} from 'react-router-dom'
 
 const Auth = () => {
+  const [state, dispatch] = useValue()
+  console.log(state);
   return (
     <div className='auth'>
       <div className='auth__container'>

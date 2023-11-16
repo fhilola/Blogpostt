@@ -1,3 +1,4 @@
+import { useValue } from '../../../context/AppProvider'
 import instance from '../../../services/api'
 import { useState } from 'react'
 
@@ -6,6 +7,7 @@ const Signup = () => {
   const [lastname, setLastname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [state, dispatch] = useValue()
 
   const handleUSerSingup = (e)=>{
     e.preventDefault()
@@ -15,7 +17,15 @@ const Signup = () => {
       email,
       password
     })
-    .then(data => console.log(data))
+    .then(response => {
+      if(response.data.token){
+        const userdata = {
+          user: response.data.data,
+          token: response.data.token
+        }
+        dispatch({type:'AUTH', userdata})
+      }
+    })
     .catch(err => console.log(err))
   }
   return (

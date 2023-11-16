@@ -8,7 +8,7 @@
 .auth__container{
     width: 100%;
     max-width: 400px;
-    height: 500px;
+    min-height: 350px;
     background-color: var(--p-bg-light);
     border-radius: 10px;
 }
@@ -41,5 +41,14 @@
         border: 1px solid gray;
         border-radius: 5px;
         text-indent: 10px;
+        font-size: 18px;
+    }
+    button{
+        padding: 16px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
     }
 }
