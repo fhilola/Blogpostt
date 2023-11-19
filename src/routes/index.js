@@ -8,6 +8,7 @@ import { Users } from './sub-routes/users/Users'
 import Auth from '../pages/auth/Auth'
 import Login from './sub-routes/login/Login'
 import Signup from './sub-routes/signup/Signup'
+import Private from './private/Private'
 
 const RouteController = ()=>{
     return(
@@ -18,7 +19,8 @@ const RouteController = ()=>{
                 <Route path='login' element={<Login/>}/>
                 <Route path='signup' element={<Signup/>}/>
             </Route>
-            <Route path='admin' element={<Admin/>}>
+            <Route path='admin' element={<Private/>}>
+                <Route path='' element={<Admin/>}/>
                 <Route path='create' element={<Create/>}/>
                 <Route path='articles' element={<Articles/>}/>
                 <Route path='users' element={<Users/>}/>

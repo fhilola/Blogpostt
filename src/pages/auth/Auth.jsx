@@ -1,10 +1,16 @@
+import { useEffect, useLayoutEffect } from 'react'
 import { useValue } from '../../context/AppProvider'
 import './Auth.scss'
-import {NavLink, Outlet} from 'react-router-dom'
+import {NavLink, Outlet, useNavigate} from 'react-router-dom'
 
 const Auth = () => {
   const [state, dispatch] = useValue()
-  console.log(state);
+  const navigate = useNavigate()
+  useLayoutEffect(()=>{
+    if(state.info.token){
+      navigate('/admin')
+    }
+  },[])
   return (
     <div className='auth'>
       <div className='auth__container'>

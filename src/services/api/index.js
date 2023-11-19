@@ -10,4 +10,19 @@ const instance = axios.create({
     },
     timeout: 10000
 })
+
+
+instance.interceptors.response.use(
+    (response) => {
+        if(response) return response
+    },
+    (error) =>{
+        if(error.response?.status === 401 || error.response?.status === 403){
+            localStorage.removeItem('token')
+            localStorage.removeItem('user_id')
+            localStorage.removeItem('is_loggedin')
+        }
+        return Promise.regect(error)
+    }
+)
 export default instance

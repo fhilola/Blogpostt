@@ -13,7 +13,7 @@ const Navbar = ({type}) => {
     useEffect(()=>{
         instance(`/api/users/${state.info.user_id}`, {
             headers: {
-                'Authorization' : 'Bearer '+ state.info.token
+                'Authorization' : 'Bearer '
             }
         })
         .then(response => setUserData(response.data.data))
