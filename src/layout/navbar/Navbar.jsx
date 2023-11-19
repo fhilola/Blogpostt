@@ -20,7 +20,7 @@ const Navbar = ({type}) => {
         .catch(err => console.log(err))
     },[userData])
     // console.log(userData);
-    return !EXCEPTION_ROUTES.includes(pathname) && (
+    return pathname.includes("auth") || pathname.includes("admin") ? null : (
         <nav className='nav'>
             <Container>
                 <div className="nav__wrapper">

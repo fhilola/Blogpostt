@@ -29,8 +29,7 @@ const Signup = () => {
         }
         dispatch({type:'AUTH', userdata})
         toast.success('Successfully registered')
-        navigate('/')
-        console.log(state);
+        navigate('/admin')
       }
       else{
         throw new Error('Something went wrong')
