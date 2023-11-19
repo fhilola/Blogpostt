@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 const Admin = () => {
   return (
     <div>
-      <p>Admin</p>
+      {/* <p>Admin</p> */}
     </div>
   )
 }
