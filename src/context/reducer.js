@@ -1,9 +1,11 @@
+import instance from "../services/api"
+
 export const initialState = {
     info: {
         user_id: localStorage.getItem('user_id') || null,
         is_loggedin: localStorage.getItem('is_loggedin') || false,
         token: localStorage.getItem('token') || ''
-    }
+    },
 }
 const reducer = (state, action) => {
     switch (action.type) {
@@ -18,6 +20,15 @@ const reducer = (state, action) => {
                     token: action.userdata.token
                 }
             }
+        case 'DELETE':
+            instance.delete(`api/posts/${action.id}`)
+            .then(res => {
+                return res
+            })
+
+        case 'EDIT':
+            
+
         default:
             return state
     }

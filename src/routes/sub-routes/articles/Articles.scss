@@ -1,0 +1,55 @@
+.articles__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 79vh;
+    overflow: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    height: fit-content;
+    gap: 5px 0;
+    box-shadow: 0px 0px 10px grey;
+    padding: 10px;
+    border-radius: 5px;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+    h2{
+        font-size: 20px;
+    }
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        padding: 10px 24px;
+        font-size: 18px;
+        border: none;
+
+    }
+
+    .delete {
+        background-color: red;
+        color: #fff;
+
+    }
+
+    .edit {
+        background-color: gold;
+        color: #222;
+    }
+
+}
