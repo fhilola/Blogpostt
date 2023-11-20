@@ -12,6 +12,17 @@ const instance = axios.create({
 })
 
 
+instance.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem("token")
+        if(token){
+            config.headers["Authorization"] = "Bearer " + token
+        }
+        return config
+    }
+)
+
+
 instance.interceptors.response.use(
     (response) => {
         if(response) return response
@@ -22,7 +33,7 @@ instance.interceptors.response.use(
             localStorage.removeItem('user_id')
             localStorage.removeItem('is_loggedin')
         }
-        return Promise.regect(error)
+        return Promise.reject(error)
     }
 )
 export default instance
