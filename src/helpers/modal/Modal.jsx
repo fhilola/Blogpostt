@@ -6,9 +6,10 @@ import instance from '../../services/api';
 import { Button } from '../../utils';
 import './Modal.scss'
 import { useValue } from '../../context/AppProvider';
+import { IoMdCloseCircle } from "react-icons/io";
 
 
-const Modal = ({editItemId}) => {
+const Modal = ({ editItemId, modal, setModal }) => {
     const [image, setImage] = useState('')
     const [category, setCategory] = useState('')
     const [categoryData, setCategoryData] = useState('')
@@ -52,7 +53,7 @@ const Modal = ({editItemId}) => {
             .catch(err => console.log(err))
     }
     return (
-        <div className='modal__wrapper'>
+        <div className={!modal ? 'modal__wrapper active' : 'modal__wrapper'}>
             <form className='create-form' onSubmit={handleCreatePost}>
                 <input type="text" placeholder='Title' className='form__input' value={title} onChange={(e) => setTitle(e.target.value)} />
                 <input type="url" placeholder='Image link here' className='form__input' value={image} onChange={(e) => setImage(e.target.value)} />
@@ -69,6 +70,7 @@ const Modal = ({editItemId}) => {
                 </select>
                 <Button text={"Create"} />
             </form>
+            <button onClick={()=>setModal(false)}><IoMdCloseCircle /></button>
         </div>
     )
 }

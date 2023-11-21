@@ -40,7 +40,7 @@ const toggleModal  = (id) => {
         )
       }
       {
-        modal && <Modal editItemId={editItemId}/>
+        modal && <Modal editItemId={editItemId} modal={modal} setModal={setModal}/>
       }
     </div>
   )
