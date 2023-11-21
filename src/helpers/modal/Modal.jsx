@@ -8,14 +8,13 @@ import './Modal.scss'
 import { useValue } from '../../context/AppProvider';
 
 
-const Modal = () => {
+const Modal = ({editItemId}) => {
     const [image, setImage] = useState('')
     const [category, setCategory] = useState('')
     const [categoryData, setCategoryData] = useState('')
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('');
     const [state, dispatch] = useValue()
-
     const modules = {
         toolbar: {
             container: [
@@ -36,15 +35,15 @@ const Modal = () => {
         instance('api/categories')
             .then(response => setCategoryData(response.data.data))
             .catch(err => console.log(err))
-    }, [])
+    }, [category])
 
     const handleCreatePost = (e) => {
         e.preventDefault()
-        instance.post('/api/posts', {
+        instance.put(`/api/posts/${editItemId}`, {
             title,
+            image,
             description,
             category,
-            image,
             headers: {
                 "Authorization": 'Bearer ' + state.info.token
             }
