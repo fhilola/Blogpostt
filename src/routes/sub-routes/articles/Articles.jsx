@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import instance from '../../../services/api'
 import { useValue } from '../../../context/AppProvider'
 import './Articles.scss'
+import Modal from '../../../helpers/modal/Modal'
 
 const Articles = () => {
   const [data, setData] = useState(null)
   const [state, dispatch] = useValue()
+  const [modal, setModal] = useState(false)
   const { user_id } = state.info
 
   useEffect(() => {
@@ -17,11 +19,9 @@ const Articles = () => {
 const handleDelete = (id) => {
   dispatch({type: 'DELETE', id})
 }
-
-const handleUpdate = (id) => {
-  dispatch({type: 'EDIT', id})
+const toggleModal  = () => {
+  setModal(true);
 }
-
   return (
     <div className='articles__wrapper'>
       {
@@ -32,10 +32,13 @@ const handleUpdate = (id) => {
             <p>{products.description.slice(0, 20)}</p>
             <div className="buttons">
               <button onClick={() => handleDelete(products._id)} className='delete'>Delete</button>
-              <button onClick={() => handleUpdate(products._id)} className='edit'>Edit</button>
+              <button onClick={toggleModal} className='edit'>Edit</button>
             </div>
           </div>
         )
+      }
+      {
+        modal && <Modal/>
       }
     </div>
   )

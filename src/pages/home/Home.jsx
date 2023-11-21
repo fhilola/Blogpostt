@@ -6,8 +6,8 @@ import Reel from '../../components/reel/Reel'
 const Home = () => {
   return (
     <div>
-        <Hero/>
-        <Reel/>
+      <Hero />
+      <Reel />
     </div>
   )
 }

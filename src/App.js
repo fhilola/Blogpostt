@@ -10,9 +10,9 @@ import 'react-loading-skeleton/dist/skeleton.css'
 function App() {
   return (
     <SkeletonTheme>
-    <Navbar/>
-    <RouteController/>
-    <ToastContainer limit={3}/>
+      <Navbar />
+      <RouteController />
+      <ToastContainer limit={3} />
     </SkeletonTheme>
   );
 }

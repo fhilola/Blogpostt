@@ -22,12 +22,12 @@ const reducer = (state, action) => {
             }
         case 'DELETE':
             instance.delete(`api/posts/${action.id}`)
-            .then(res => {
-                return res
-            })
+                .then(res => {
+                    return res
+                })
 
         case 'EDIT':
-            
+            instance.put(`api/posts/${action.id}`, )
 
         default:
             return state

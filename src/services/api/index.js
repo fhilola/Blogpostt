@@ -11,24 +11,22 @@ const instance = axios.create({
     timeout: 10000
 })
 
-
 instance.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem("token")
-        if(token){
+        if (token) {
             config.headers["Authorization"] = "Bearer " + token
         }
         return config
     }
 )
 
-
 instance.interceptors.response.use(
     (response) => {
-        if(response) return response
+        if (response) return response
     },
-    (error) =>{
-        if(error.response?.status === 401 || error.response?.status === 403){
+    (error) => {
+        if (error.response?.status === 401 || error.response?.status === 403) {
             localStorage.removeItem('token')
             localStorage.removeItem('user_id')
             localStorage.removeItem('is_loggedin')
@@ -36,4 +34,5 @@ instance.interceptors.response.use(
         return Promise.reject(error)
     }
 )
+
 export default instance

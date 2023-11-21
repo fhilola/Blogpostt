@@ -13,8 +13,8 @@ const Button = ({ text, icon, loading, click, type, disabled }) => {
     )
 }
 
-const Container = ({children}) =>{
-    return(
+const Container = ({ children }) => {
+    return (
         <div className='container'>
             {children}
         </div>
