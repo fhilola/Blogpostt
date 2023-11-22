@@ -21,7 +21,6 @@ const Signup = () => {
       password
     })
     .then(response => {
-      console.log(response);
       if(response.data.token){
         const userdata = {
           user: response.data.data,

@@ -4,11 +4,11 @@ import Article from '../pages/article/Article'
 import Admin from '../pages/admin/Admin'
 import Create from './sub-routes/create/Create'
 import Articles from './sub-routes/articles/Articles'
-import { Users } from './sub-routes/users/Users'
 import Auth from '../pages/auth/Auth'
 import Login from './sub-routes/login/Login'
 import Signup from './sub-routes/signup/Signup'
 import Private from './private/Private'
+import Main from './sub-routes/main/Main'
 
 const RouteController = () => {
     return (
@@ -23,7 +23,7 @@ const RouteController = () => {
                 <Route path='' element={<Admin />} />
                 <Route path='create' element={<Create />} />
                 <Route path='articles' element={<Articles />} />
-                <Route path='users' element={<Users />} />
+                <Route path='main' element={<Main />} />
             </Route>
         </Routes>
     )

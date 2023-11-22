@@ -21,6 +21,7 @@ const Login = () => {
           user: response.data.data,
           token: response.data.token
         }
+        console.log(userdata);
         dispatch({type:"AUTH", userdata})
         navigate('/admin')
       }

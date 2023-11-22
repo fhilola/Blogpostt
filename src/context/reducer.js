@@ -4,7 +4,8 @@ export const initialState = {
     info: {
         user_id: localStorage.getItem('user_id') || null,
         is_loggedin: localStorage.getItem('is_loggedin') || false,
-        token: localStorage.getItem('token') || ''
+        token: localStorage.getItem('token') || '',
+        userData: {}
     },
 }
 const reducer = (state, action) => {
@@ -13,12 +14,14 @@ const reducer = (state, action) => {
             localStorage.setItem('token', action.userdata.token)
             localStorage.setItem('user_id', action.userdata.user._id)
             localStorage.setItem('is_loggedin', true)
+            localStorage.setItem('userData', JSON.stringify(action.userdata.user))
             return {
                 info: {
                     user_id: action.userdata.user._id,
                     is_loggedin: true,
-                    token: action.userdata.token
-                }
+                    token: action.userdata.token,
+                    userData: action.userdata.user
+                },
             }
         case 'DELETE':
             instance.delete(`api/posts/${action.id}`)

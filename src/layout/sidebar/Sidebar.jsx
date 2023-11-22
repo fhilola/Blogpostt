@@ -11,7 +11,7 @@ const Sidebar = () => {
       </Link>
       <ul className="sidebar__list">
         <li className="sidebar__item">
-          <NavLink end className={({isActive}) => isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"} to="/admin">
+          <NavLink end className={({isActive}) => isActive ? "sidebar__link sidebar__link--active" : "sidebar__link"} to="/admin/main">
             Main
           </NavLink>
         </li>
