@@ -5,7 +5,7 @@ export const initialState = {
         user_id: localStorage.getItem('user_id') || null,
         is_loggedin: localStorage.getItem('is_loggedin') || false,
         token: localStorage.getItem('token') || '',
-        userData: {}
+        userData: JSON.parse(localStorage.getItem('userData'))
     },
 }
 const reducer = (state, action) => {
